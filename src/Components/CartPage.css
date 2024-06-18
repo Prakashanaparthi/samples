@@ -1,0 +1,35 @@
+.cart-container{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://t3.ftcdn.net/jpg/01/93/28/56/360_F_193285630_ysOxqfc0VsGY8IKFsEVTWP7Ww7zSJua8.jpg');
+    font-family: 'Robot';
+    height: 100vh;
+    background-size: cover;
+}
+.heading{
+    margin: 0px;
+    color: aliceblue;
+}
+.heading2{
+    color: black;
+}
+.productNames{
+    font-family: 'Robot';
+    margin: 0px;
+    text-decoration: none;
+}
+.cart-item-details{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    
+}
+.cart-items{
+    background-color: aliceblue;
+    padding: 50px;
+    border-radius: 15px;
+}

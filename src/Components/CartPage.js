@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './CartPage.css';
 
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
@@ -19,29 +20,36 @@ function CartPage() {
         localStorage.setItem('cartItems', JSON.stringify(updatedCart));
     };
 
-     
+    const calculateTotal = () => {
+        return cartItems.reduce((total, item) => total + item.price * item.count, 0);
+    };
+
     return (
         <div className="cart-container">
-            <h1>Cart Items</h1>
+            <h1 className='heading'>Cart Items</h1>
             <div className="cart-items">
                 {cartItems.length === 0 ? (
-                    <p>Your cart is empty.</p>
+                    <p className='heading2'>Your cart is empty.</p>
                 ) : (
-                    <ul>
-                        {cartItems.map((item, index) => (
-                            <li key={index}>
-                                <div className="cart-item">
-                                    
-                                    <div className="cart-item-details">
-                                        <h3>{item.name}</h3>
-                                        <p>Price: ${item.price}</p>
-                                        <p>Quantity: {item.quantity}</p>
-                                        <button onClick={() => removeFromCart(index)}>Remove</button>
+                    <div>
+                        <ul>
+                            {cartItems.map((item, index) => (
+                                <li key={index}>
+                                    <div className="cart-item">
+                                        <div className="cart-item-details">
+                                            <h3 className='productNames'>{item.name}</h3>
+                                            <p className='productNames'>Price: ${item.price}</p>
+                                            <p className='productNames'>Quantity: {item.count}</p>
+                                            <button onClick={() => removeFromCart(index)}>Remove</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="total">
+                            <h2>Total: ${calculateTotal().toFixed(2)}</h2>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

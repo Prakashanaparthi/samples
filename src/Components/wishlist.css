@@ -1,0 +1,29 @@
+.wishlist-container{
+     background-image: url('https://t3.ftcdn.net/jpg/01/93/28/56/360_F_193285630_ysOxqfc0VsGY8IKFsEVTWP7Ww7zSJua8.jpg');
+     background-size: cover;
+    height: 100vh;
+    color: black;
+    font-family: 'Roboto';
+    display: flex;
+    align-items: center;
+justify-content: center;
+flex-direction: column;}
+
+.heading{
+    color: rgb(254, 253, 253);
+    font-family: 'Roboto';}
+
+.wishlist-items{
+    background-color: rgb(1, 35, 63);
+    color: black;
+    border-radius: 10px;
+    padding: 50px;
+}    
+.wishlist-item-details{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    gap: 20px;
+    color: aliceblue;
+    
+}
