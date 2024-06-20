@@ -1,14 +1,10 @@
 .wishlist-container{
-     background-image: url('https://t3.ftcdn.net/jpg/01/93/28/56/360_F_193285630_ysOxqfc0VsGY8IKFsEVTWP7Ww7zSJua8.jpg');
+    background-color: rgb(2, 2, 38);
      background-size: cover;
     height: 100vh;
     color: black;
     font-family: 'Roboto';
-    display: flex;
-    align-items: center;
-justify-content: center;
-flex-direction: column;}
-
+    padding: 50px;}
 .heading{
     color: rgb(254, 253, 253);
     font-family: 'Roboto';}
@@ -17,13 +13,48 @@ flex-direction: column;}
     background-color: rgb(1, 35, 63);
     color: black;
     border-radius: 10px;
-    padding: 50px;
+    
+    
 }    
 .wishlist-item-details{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    gap: 20px;
-    color: aliceblue;
     
+    color: aliceblue;
+    align-items: center;
+    
+
+}
+
+.wishlistImg{
+    height: 80px;
+    width: 80px;
+}
+
+.wishListBtn{
+    border: 0px;
+    border-radius: 5px;
+    
+    height: 25px;
+    font-family: 'Roboto';
+}
+
+.border{
+    border: 1px;
+    border-style: double;
+    height: 80px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.column{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: aliceblue;
+    font-family: 'Roboto';
+    font-size: 10px;
 }

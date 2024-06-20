@@ -1,35 +1,105 @@
-.cart-container{
+.cart-container {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://t3.ftcdn.net/jpg/01/93/28/56/360_F_193285630_ysOxqfc0VsGY8IKFsEVTWP7Ww7zSJua8.jpg');
-    font-family: 'Robot';
+    /* justify-content: center;
+    align-items: center; */
+    background-color: antiquewhite;
+    font-family: 'Roboto';
     height: 100vh;
     background-size: cover;
+    color: rgb(254, 253, 253); /* Adjusted to match heading color */
 }
-.heading{
+
+.heading {
     margin: 0px;
-    color: aliceblue;
+    color: rgb(15, 15, 15); /* Adjusted to match heading color */
+    font-family: 'Roboto'; /* Added font-family */
 }
-.heading2{
-    color: black;
+
+.heading2 {
+    color: black; /* Adjusted to match the original color */
 }
-.productNames{
-    font-family: 'Robot';
+
+.productNames {
+    font-family: 'Roboto'; /* Added font-family */
     margin: 0px;
     text-decoration: none;
+    color: aliceblue;
+    font-family: 'Roboto';
 }
-.cart-item-details{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 10px;
-    
-}
-.cart-items{
-    background-color: aliceblue;
+
+.cart-items {
+    background-color: rgb(1, 35, 63); /* Adjusted to match the original color */
     padding: 50px;
     border-radius: 15px;
+    color: black; /* Adjusted to match the original color */
 }
+
+.cart-item-details {
+    display: flex;
+    flex-direction: row;
+    
+    margin-top: 10px;
+    align-items: center; /* Added alignment */
+}
+
+.cartImg {
+    height: 80px;
+    width: 80px;
+}
+
+.cartBtn {
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;
+    font-family: 'Roboto'; /* Added font-family */
+}
+
+.border {
+    border: 1px;
+    border-style: double;
+    height: 80px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: rgb(254, 253, 253); /* Adjusted to match heading color */
+    font-family: 'Roboto'; /* Added font-family */
+    font-size: 10px;
+}
+
+.total {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.boxes{
+    height: 100px;
+    width: 20%;
+    border: 2px;
+    border-color: aliceblue;
+    border-style:double;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.total{
+    color: aliceblue;
+
+}
+.img{
+    width: 80[x];
+    height: 100px;
+}
+
