@@ -25,7 +25,7 @@ function WishlistPage() {
             <h1 className='heading'>Wishlist Items</h1>
             <div className="wishlist-items">
                 {wishlistItems.length === 0 ? (
-                    <p className='heading'>Your wishlist is empty.</p>
+                    <p className='headings'>Your wishlist is empty.</p>
                     
                 ) : (
                     <ul>

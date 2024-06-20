@@ -1,19 +1,24 @@
 .wishlist-container{
-    background-color: rgb(2, 2, 38);
+    background-color: antiquewhite;
      background-size: cover;
     height: 100vh;
-    color: black;
+    color: rgb(238, 227, 227);
     font-family: 'Roboto';
     padding: 50px;}
 .heading{
     color: rgb(254, 253, 253);
-    font-family: 'Roboto';}
-
+    font-family: 'Roboto';
+    
+}
+    
+.headings{
+    color: aliceblue;
+}
 .wishlist-items{
     background-color: rgb(1, 35, 63);
     color: black;
     border-radius: 10px;
-    
+    height: 100px;
     
 }    
 .wishlist-item-details{
