@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './wishlist.css';
 
 function WishlistPage() {
@@ -12,9 +12,17 @@ function WishlistPage() {
         }
     }, []);
 
+    const toggleLike = (index) => {
+        const updatedWishlist = [...wishlistItems];
+        updatedWishlist[index].liked = !updatedWishlist[index].liked;
+        setWishlistItems(updatedWishlist);
+        // Update local storage
+        localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
+    };
+
     const removeFromWishlist = (index) => {
         const updatedWishlist = [...wishlistItems];
-        updatedWishlist.splice(index, 1); // Remove item at index
+        updatedWishlist.splice(index, 1);
         setWishlistItems(updatedWishlist);
         // Update local storage
         localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
@@ -22,23 +30,33 @@ function WishlistPage() {
 
     return (
         <div className="wishlist-container">
-            <h1 className='heading'>Wishlist</h1>
             <div className="wishlist-items">
+                <header>My Wishlist</header>
                 {wishlistItems.length === 0 ? (
                     <p className='empty-wishlist'>Your wishlist is empty.</p>
                 ) : (
-                    <ul className='wishlist-list'>
+                    <div>
                         {wishlistItems.map((item, index) => (
-                            <li key={index} className="wishlist-item">
-                                <img className='wishlist-img' src={item.img} alt={item.name} />
-                                <div className='wishlist-details'>
-                                    <h3 className='wishlist-name'>{item.name}</h3>
-                                    <p className='wishlist-price'>${item.price}</p>
-                                    <button className='wishlist-remove' onClick={() => removeFromWishlist(index)}>Remove</button>
+                            <div className="wishlist-item" key={index}>
+                                <img src={item.img} alt={item.name} />
+                                <div className="product-details">
+                                    <h3>{item.name}</h3>
+                                   
+                                        <p>Price: ${item.price}</p>
+                                   
+                                        
+                                   
                                 </div>
-                            </li>
+                                <button
+                                    className={`like-button ${item.liked ? 'liked' : ''}`}
+                                    onClick={() => toggleLike(index)}
+                                >
+                                    {item.liked ? 'Liked!' : 'Like'}
+                                </button>
+                                <button className="remove-button" onClick={() => removeFromWishlist(index)}>Remove</button>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 )}
             </div>
         </div>
