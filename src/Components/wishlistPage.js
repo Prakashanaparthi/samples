@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './wishlist.css'
+import './wishlist.css';
 
 function WishlistPage() {
     const [wishlistItems, setWishlistItems] = useState([]);
@@ -22,36 +22,19 @@ function WishlistPage() {
 
     return (
         <div className="wishlist-container">
-            <h1 className='heading'>Wishlist Items</h1>
+            <h1 className='heading'>Wishlist</h1>
             <div className="wishlist-items">
                 {wishlistItems.length === 0 ? (
-                    <p className='headings'>Your wishlist is empty.</p>
-                    
+                    <p className='empty-wishlist'>Your wishlist is empty.</p>
                 ) : (
-                    <ul>
-                        <div className='column'>
-                            <h1>image</h1>
-                            <h1>Name</h1>
-                            <h1>Price</h1>
-                            <h1>Remove</h1>
-                        </div>
+                    <ul className='wishlist-list'>
                         {wishlistItems.map((item, index) => (
-                            <li key={index}>
-                                <div className="wishlist-item">
-                                    <div className="wishlist-item-details">
-                                        <div className='border'>
-                                        <img className='wishlistImg' src={item.img}/>
-                                        </div>
-                                        <div className='border'>
-                                        <h3 className='productNames'>{item.name}</h3>
-                                        </div>
-                                        <div className='border'>
-                                        <p className='productNames'>Price: ${item.price}</p>
-                                        </div>
-                                        <div className='border'>
-                                        <button className='wishListBtn' onClick={() => removeFromWishlist(index)}>Remove</button>
-                                        </div>
-                                    </div>
+                            <li key={index} className="wishlist-item">
+                                <img className='wishlist-img' src={item.img} alt={item.name} />
+                                <div className='wishlist-details'>
+                                    <h3 className='wishlist-name'>{item.name}</h3>
+                                    <p className='wishlist-price'>${item.price}</p>
+                                    <button className='wishlist-remove' onClick={() => removeFromWishlist(index)}>Remove</button>
                                 </div>
                             </li>
                         ))}
