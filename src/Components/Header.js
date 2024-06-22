@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faHeart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Header.css';
 import logo from './images/pngegg (2).png';
 import items from './products';
@@ -14,68 +16,79 @@ function Header() {
     const [wishlistItems, setWishlistItems] = useState([]);
 
     useEffect(() => {
-        // Load cart items from local storage on component mount
         const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         setCartItems(storedCartItems);
 
-        // Load wishlist items from local storage on component mount
         const storedWishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
         setWishlistItems(storedWishlistItems);
 
-        // Load products
         if (items) {
             setImages(items);
         }
     }, []);
 
-    // Function to add item to cart
     const addToCart = (item) => {
         const itemIndex = cartItems.findIndex((cartItem) => cartItem.name === item.name);
 
         if (itemIndex !== -1) {
-            // Item already exists in cart, update the count
             const updatedCartItems = [...cartItems];
             updatedCartItems[itemIndex].count += 1;
             setCartItems(updatedCartItems);
             localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         } else {
-            // Item does not exist in cart, add with count 1
             const updatedCartItems = [...cartItems, { ...item, count: 1 }];
             setCartItems(updatedCartItems);
             localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         }
+
+        toast.success(`${item.name} added to cart!`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
-    // Function to add item to wishlist
-    const addToWishlist = (item) => {
+    const toggleWishlist = (item) => {
         const itemIndex = wishlistItems.findIndex((wishlistItem) => wishlistItem.name === item.name);
 
-        if (itemIndex === -1) {
-            // Item does not exist in wishlist, add it
+        if (itemIndex !== -1) {
+            const updatedWishlistItems = wishlistItems.filter((wishlistItem) => wishlistItem.name !== item.name);
+            setWishlistItems(updatedWishlistItems);
+            localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlistItems));
+        } else {
             const updatedWishlistItems = [...wishlistItems, item];
             setWishlistItems(updatedWishlistItems);
             localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlistItems));
         }
     };
 
+    const isInWishlist = (item) => {
+        return wishlistItems.some((wishlistItem) => wishlistItem.name === item.name);
+    };
+
     return (
         <div className='fullpage'>
+            <ToastContainer />
             <nav className="navbar">
                 <div className="navbar-left">
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 </div>
                 <div className="navbar-middle">
                     <ul className="navbar-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/products">Ready To Eat</a></li>
-                        <li><a href="/about">Spices & Masalas</a></li>
-                        <li><a href="/contact">Pickles</a></li>
-                        <li><a href="/contact">Track Order</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/products">Ready To Eat</Link></li>
+                        <li><Link to="/about">Spices & Masalas</Link></li>
+                        <li><Link to="/contact">Pickles</Link></li>
+                        <li><Link to="/track-order">Track Order</Link></li>
                     </ul>
                     <div className='row'>
                         <input className='searchBar' type='search' placeholder='SEARCH' />
                         <FontAwesomeIcon icon={faSearch} className="navbar-icon" />
-                    </div>   
+                    </div>
                 </div>
                 <div className="navbar-right">
                     <div className='naviconsBg'>
@@ -103,16 +116,21 @@ function Header() {
                 PICKLES
             </h1>
             <div className='section2'>
-                {images && images.map((item1, index) => {
+                {images && images.map((item, index) => {
+                    const isLiked = isInWishlist(item);
                     return (
                         <div className='products' key={index}>
                             <div className='PImgc'>
-                                <img className='product' src={item1.img} alt={item1.name} />
+                                <img className='product' src={item.img} alt={item.name} />
                                 <div className='colum'>
-                                    <p className='priceTag'>Name:<span>{item1.name}</span></p>   
-                                    <p className='priceTag'>Price:<span>{item1.price}</span></p>   
-                                    <button className='productsBtn' onClick={() => addToCart(item1)}>ADD TO CART</button>
-                                    <button className='productsBtn' onClick={() => addToWishlist(item1)}>WISHLIST</button>
+                                    <p className='priceTag'>Name:<span>{item.name}</span></p>
+                                    <p className='priceTag'>Price:<span>{item.price}</span></p>
+                                    <button className='productsBtn' onClick={() => addToCart(item)}>ADD TO CART</button>
+                                    <FontAwesomeIcon
+                                        icon={faHeart}
+                                        className={`icon ${isLiked ? 'liked' : ''}`}
+                                        onClick={() => toggleWishlist(item)}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -154,7 +172,7 @@ function Header() {
                     <p>Track Order</p>
                 </div>
             </footer>
-        </div>        
+        </div>
     );
 }
 

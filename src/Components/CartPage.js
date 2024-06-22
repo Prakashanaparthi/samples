@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CartPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; // Importing the FontAwesome icon
 
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
@@ -43,6 +45,10 @@ function CartPage() {
     };
 
     return (
+        <>
+        <button className="back-button" onClick={() => window.history.back()}>
+                <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
+            </button>
         <div className="cart-page">
             <h1 className='heading'>Shopping Cart</h1>
             <div className="cart-content">
@@ -89,6 +95,7 @@ function CartPage() {
                 </div>
             </div>
         </div>
+        </>    
     );
 }
 

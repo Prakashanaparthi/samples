@@ -1,171 +1,206 @@
-.fullpage{
-    /* padding-bottom: 100px; */
- 
-}
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-     padding: 10px  ;
-    background-color: #f6f2f2;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-logo {
-    height: 60px; /* Adjust height as needed */
-  }
-  
-  .navbar-links {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar-links li {
-    margin-right: 20px;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: #0c0c0c;
-    font-weight: bold;
-    font-size: 20px;
-    color: #333;
-    font-family: 'Roboto';
-  }
-  
-  .navbar-links a:hover {
-    color: #d26464;
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .navbar-icon {
-    margin-left: 10px;
-    font-size: 1.2rem;
-    color: #555;
-    padding-right: 5px;
-  }
-  .naviconsBg{
-    background-color: aliceblue;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-
-  }
-  .searchBar{
-    width: 100%;
-    border: 0px;
-    background-color: rgb(226, 226, 219);
-    height: 25px;
-    border-radius: 5px;
-  }
-  .row{
-    display: flex;
-    flex-direction: row;
-  }
-  .colum{
-    display: flex;
-    flex-direction: column;
-  }
-  .section1{
-    height: 400px;
-  }
-  .section1Img{
-    height: 100%;
-    width: 100%;
-  }
-  .name{
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Roboto';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f6f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.products{
-    background-color: rgb(227, 232, 236);
-    box-shadow: #0c0c0c;
-    height: 400px;
-    width: 20%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
+.navbar-logo {
+  height: 60px; /* Adjust height as needed */
 }
-.PImgc{
-    height: 250px;
-    width: 250px;
+
+.navbar-links {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
 }
-.product{
-    height: 100%;
-    width: 100%;
+
+.navbar-links li {
+  margin-right: 20px;
 }
-.section2{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
+
+.navbar-links a {
+  text-decoration: none;
+  color: #0c0c0c;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+  font-family: 'Roboto';
 }
+
+.navbar-links a:hover {
+  color: #d26464;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-icon {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #555;
+  padding-right: 5px;
+}
+
+.naviconsBg {
+  background-color: aliceblue;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.searchBar {
+  width: 100%;
+  border: 0px;
+  background-color: rgb(226, 226, 219);
+  height: 25px;
+  border-radius: 5px;
+}
+
+.wishlist-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wishlist-icon.liked {
+  color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.colum {
+  display: flex;
+  flex-direction: column;
+}
+
+.section1 {
+  height: 400px;
+}
+
+.section1Img {
+  height: 100%;
+  width: 100%;
+}
+
+.name {
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.products {
+  background-color: rgb(227, 232, 236);
+  height: 400px;
+  width: 20%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.PImgc {
+  height: 250px;
+  width: 250px;
+}
+
+.product {
+  height: 100%;
+  width: 100%;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .productsBtn {
-    border: 0px;
-    height: 30px;
-    margin: 5px;
-    background-color: rgb(215, 94, 57);
-    border-radius: 10px;
-}
-.productsBtn:hover{
-    background-color: #290f01;
-    color: aliceblue;
-}
-.priceTag{
-    font-weight: bold;
-    margin: 0px;
-    font-size: 'Roboto';
-    text-align: center;
+  border: 0px;
+  height: 30px;
+  margin: 5px;
+  background-color: rgb(215, 94, 57);
+  border-radius: 10px;
 }
 
-.hrLine{
-    border: 0; /* Remove default border */
+.productsBtn:hover {
+  background-color: #290f01;
+  color: aliceblue;
+}
+
+.priceTag {
+  font-weight: bold;
+  margin: 0px;
+  font-size: 'Roboto';
+  text-align: center;
+}
+
+.hrLine {
+  border: 0; /* Remove default border */
   height: 5px; /* Set the height of the line */
   background-image: linear-gradient(to right, transparent, #0f0e0e, transparent); /* Gradient line */
-  margin: 40px ; /* Optional: Adjust margin according to your layout */
+  margin: 40px; /* Optional: Adjust margin according to your layout */
 }
 
-.section3{
-    text-align: center;
-    font-size: 30px;
-    color: rgb(167, 198, 224);
+.section3 {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(167, 198, 224);
 }
-.about{
-    height: 400px;
-    width: 400px;
+
+.about {
+  height: 400px;
+  width: 400px;
 }
-.aboutImages{
-    height: 100%;
-    width: 100%;
+
+.aboutImages {
+  height: 100%;
+  width: 100%;
 }
-.aboutc{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 80px;
+
+.aboutc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 80px;
 }
-.section5{
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: #0c0c0c;
-    color: white;
-    
+
+.section5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #0c0c0c;
+  color: white;
 }
+
+/* Header.css */
+
+/* Other styles remain unchanged */
+
+.icon {
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.icon.liked {
+  color: red; /* Color for liked icon */
+}
+
+/* Rest of your CSS remains unchanged */
