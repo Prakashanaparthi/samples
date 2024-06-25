@@ -104,7 +104,9 @@ function Header() {
                         </Link>
                     </div>
                     <div className='naviconsBg'>
-                        <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+                        <Link to="/login">
+                            <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+                        </Link>
                     </div>
                 </div>
             </nav>
@@ -121,16 +123,16 @@ function Header() {
                     return (
                         <div className='products' key={index}>
                             <div className='PImgc'>
+                                <FontAwesomeIcon
+                                    icon={faHeart}
+                                    className={`icon ${isLiked ? 'liked' : ''}`}
+                                    onClick={() => toggleWishlist(item)}
+                                />
                                 <img className='product' src={item.img} alt={item.name} />
                                 <div className='colum'>
-                                    <p className='priceTag'>Name:<span>{item.name}</span></p>
-                                    <p className='priceTag'>Price:<span>{item.price}</span></p>
+                                    <p className='priceTag'>Name: <span>{item.name}</span></p>
+                                    <p className='priceTag'>Price: <span>{item.price}</span></p>
                                     <button className='productsBtn' onClick={() => addToCart(item)}>ADD TO CART</button>
-                                    <FontAwesomeIcon
-                                        icon={faHeart}
-                                        className={`icon ${isLiked ? 'liked' : ''}`}
-                                        onClick={() => toggleWishlist(item)}
-                                    />
                                 </div>
                             </div>
                         </div>
