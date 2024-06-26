@@ -21,9 +21,8 @@ function WishlistPage() {
 
     const moveToCart = (index) => {
         const item = wishlistItems[index];
-        const updatedWishlist = [...wishlistItems];
-        updatedWishlist.splice(index, 1);
 
+        // Check if the item is already in the cart
         const itemIndex = cartItems.findIndex((cartItem) => cartItem.name === item.name);
         let updatedCartItems;
         if (itemIndex !== -1) {
@@ -33,10 +32,7 @@ function WishlistPage() {
             updatedCartItems = [...cartItems, { ...item, count: 1 }];
         }
 
-        setWishlistItems(updatedWishlist);
         setCartItems(updatedCartItems);
-
-        localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
 
         toast.success(`${item.name} moved to cart!`, {
