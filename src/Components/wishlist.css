@@ -1,9 +1,9 @@
 .wishlistBg{
-    background-image: url('https://png.pngtree.com/background/20230412/original/pngtree-bamboo-forest-background-in-the-rain-bamboo-leaf-plants-raining-nature-picture-image_2397515.jpg');
-    height: 98vh;
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
     background-size: cover;
     padding-top: 10px;
     padding-left: 10px;
+    min-height: 98vh;
 }
 .wishlist-container {
     display: flex;
@@ -28,10 +28,11 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     min-height: 500px;
+    
 }
 
 .wishlist-items header {
-    background-color: #4CAF50;
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
     color: #ffffff;
     padding: 15px;
     text-align: center;
