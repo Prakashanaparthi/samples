@@ -54,7 +54,8 @@ function WishlistPage() {
     };
 
     return (
-        <>
+        <div className='wishlistBg'>
+        
             <ToastContainer />
             <button className="back-button" onClick={() => navigate(-1)}>
                 <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
@@ -86,7 +87,7 @@ function WishlistPage() {
                     )}
                 </div>
             </div>
-        </>
+    </div>
     );
 }
 

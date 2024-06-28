@@ -47,7 +47,7 @@ function CartPage() {
     };
 
     return (
-        <>
+        <div className='cartPageBg'>
             <button className="back-button" onClick={() => window.history.back()}>
                 <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
             </button>
@@ -97,7 +97,7 @@ function CartPage() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -1,3 +1,4 @@
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -128,6 +129,7 @@
   gap: 20px;
   justify-content: center;
   margin-bottom: 20px;
+  
 }
 
 .productsBtn {
@@ -183,11 +185,47 @@
 .section5 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  margin-top: 100px;
   background-color: #0c0c0c;
   color: white;
+  padding: 10px;
+  padding-bottom: 20px;
+  
 }
-
+.section5part1{
+  width: 60%;
+}
+.section5part2{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  
+}
+.section5part2Parts{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section5par{
+  margin: 0px;
+  font-size: 12px;
+}
+.section5Headings{
+  font-size: 20px;
+}
+.footerSearchBtn{
+  display: flex;
+  margin-top: 10px ;
+  margin-bottom: 10px;
+  background-color: rgb(172, 92, 31);
+  width: 150px;
+  height: 35px;
+  color: white;
+  border: 0px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
 
 .icon {
   font-size: 1.5rem;
@@ -205,4 +243,29 @@
   color: red; 
 }
 
+.hrline{
+  height:90%;
+  border-width:100;
+  color:rgb(181, 25, 25);
+  background-color:rgb(172, 20, 20);
+  
+}
+.footersearch{
+  width: 50%;
+  align-items: flex-start;
+  display: flex;
+  height: 35px;
+}
+.footerIconsC{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.footerIconC{
+  height: 30px;
+  width: 30px;
+}
 
+.socialIcons{
+  height: 100%;
+}

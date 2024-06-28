@@ -9,6 +9,10 @@ import logo from './images/pngegg (2).png';
 import items from './products';
 import last from './images/five.png';
 import last2 from './images/free.png';
+import insta  from './images/instagram_2111463.png'
+import facebook from './images/facebook_5968764.png'
+import whatsapp from './images/whatsapp_733585.png'
+
 
 function Header() {
     const [images, setImages] = useState([]);
@@ -154,24 +158,43 @@ function Header() {
                 </div>
             </div>
             <footer className='section5'>
-                <div>
-                    <h1>Categories</h1>
-                    <p>BreakFast Essentials</p>
-                    <p>Meals in Minutes</p>
-                    <p>Beverages</p>
+                <div className='section5part1'>
+                    <input className='footersearch' placeholder='Search' type='search'></input>
+                    <button className='footerSearchBtn'>Search</button>
+                    <div className='footerIconsC'>
+                        <div className='footerIconC'>
+                            <img className='socialIcons' src={insta}/>
+                        </div>
+                        <div className='footerIconC'>
+                            <img className='socialIcons' src={whatsapp}/>
+                        </div>
+                        <div className='footerIconC'>
+                            <img className='socialIcons' src={facebook}/>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h1>Policies</h1>
-                    <p>Terms and Conditions</p>
-                    <p>Privacy Policy</p>
-                    <p>Cancelations and Return</p>
-                    <p>Shipping Fees and Delivery</p>
-                </div>
-                <div>
-                    <h1>Help</h1>
-                    <p>Payments</p>
-                    <p>Shipping Fees and Delivery</p>
-                    <p>Track Order</p>
+                <div className='section5part2'>
+                        <div className='section5part2Parts'>
+                            <h1 className='section5Headings'>Categories</h1>
+                            <p className='section5par'>BreakFast Essentials</p>
+                            <p className='section5par'>Meals in Minutes</p>
+                            <p className='section5par'>Beverages</p>
+                        </div>
+                        <hr className='hrline' ></hr>
+                        <div className='section5part2Parts'>
+                            <h1 className='section5Headings'>Policies</h1>
+                            <p className='section5par'>Terms and Conditions</p>
+                            <p className='section5par'>Privacy Policy</p>
+                            <p className='section5par'>Cancelations and Return</p>
+                            <p className='section5par'>Shipping Fees and Delivery</p>
+                        </div>
+                        <hr className='hrline' ></hr>
+                        <div className='section5part2Parts'>
+                            <h1 className='section5Headings'>Help</h1>
+                            <p className='section5par'>Payments</p>
+                            <p className='section5par'>Shipping Fees and Delivery</p>
+                            <p className='section5par'>Track Order</p>
+                        </div>
                 </div>
             </footer>
         </div>

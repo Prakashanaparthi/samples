@@ -1,11 +1,23 @@
+.cartPageBg{
+    background-image: url('https://png.pngtree.com/background/20230412/original/pngtree-bamboo-forest-background-in-the-rain-bamboo-leaf-plants-raining-nature-picture-image_2397515.jpg');
+    height: 98vh;
+    background-size: cover;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 .cart-page {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f8f8f8;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 100vh;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .heading {
@@ -158,7 +170,7 @@
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #d26464;
+    background-color: #359138;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -169,5 +181,5 @@
 }
 
 .back-button:hover {
-    background-color: #c05050;
+    background-color: #20c23b;
 }
