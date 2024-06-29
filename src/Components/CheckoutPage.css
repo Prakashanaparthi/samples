@@ -1,30 +1,60 @@
-/* CheckoutPage.css */
-
+/* Checkout Page Styles */
+.fullPage{
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
+    background-size: cover;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
 .checkout-page {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background: #f8f8f8;
+    flex-direction: row;
     
-}
-
-.left-column, .right-column {
-    background: #fff;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    gap: 100px;
+}
+
+.left-column{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    width: 48%;
-}
-
-h2 {
-    font-size: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    color: #444;
+    width: 50%;
+    height: 100%;
+}
+.right-column {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 50%;
 }
 
-ul {
+
+.add-address-button {
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.address-list {
     list-style: none;
     padding: 0;
 }
@@ -34,125 +64,152 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f9f9f9;
-    transition: background 0.3s;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
 }
 
-.address-card:hover {
-    background: #f1f1f1;
+.address-details {
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.address-card p {
-    margin: 0;
-}
-
-.add-address-button, .form-btn, .next-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 15px;
-    margin-top: 15px;
+.address-actions button {
+    background: none;
     border: none;
-    border-radius: 8px;
-    background: #007bff;
-    color: #fff;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    margin-left: 10px;
+    color: #ff3f6c;
 }
 
-.add-address-button:hover, .form-btn:hover, .next-button:hover {
-    background: #0056b3;
+.addressIcons{
+    margin: 10px;
 }
 
 .cart-item {
     display: flex;
     align-items: center;
-    padding: 0px;
-    margin: 2px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f9f9f9;
-    transition: background 0.3s;
-}
-
-.cart-item:hover {
-    background: #f1f1f1;
+    border: 1px rgb(12, 12, 12) dashed;
 }
 
 .images {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 40px;
+    height: 40px;
     margin-right: 15px;
-    border-radius: 8px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
-.item-details p {
-    margin: 5px 0;
-   
-}
-.item-details{
+.item-details {
+    flex: 1;
+    font-size: 14px;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
 }
 
 .summary-details {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgb(11, 0, 0);
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
     width: 400px;
     max-width: 90%;
+    position: relative;
 }
 
-.modal h2 {
-    margin-top: 0;
-}
-
-.address-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.address-form input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.modal-buttons {
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button.form-btn {
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.cancel-btn {
+    background-color: #ccc;
+    margin-left: 10px;
+}
+
+.type-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.type-btn.active {
+    background-image: linear-gradient(to right,#11998E ,#38EF7D);
+    color: white;
+}
+
+.btnContainer {
+    text-align: right;
     margin-top: 20px;
 }
 
-.btnContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+.next-button {
+    background-image: linear-gradient(to right,#11998E ,#0b5a29);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
-.next-button{
-    width: 200px;
-    height: 35px;
+
+.button-group{
+    margin-top: 10px;
 }

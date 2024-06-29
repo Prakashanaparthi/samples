@@ -6,6 +6,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
+    const [showEmptyCartAlert, setShowEmptyCartAlert] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -43,7 +44,15 @@ function CartPage() {
     };
 
     const handleCheckout = () => {
-        navigate('/checkout');
+        if (cartItems.length === 0) {
+            setShowEmptyCartAlert(true); // Show popup if cart is empty
+        } else {
+            navigate('/checkout');
+        }
+    };
+
+    const handleCloseAlert = () => {
+        setShowEmptyCartAlert(false); // Close the empty cart popup
     };
 
     return (
@@ -63,6 +72,7 @@ function CartPage() {
                                     <li key={index}>
                                         <div className="cart-item">
                                             <div className="cart-item-details">
+                                                
                                                 <div className='boxes'>
                                                     <img className='img' src={item.img} alt={item.name} />
                                                 </div>
@@ -97,6 +107,16 @@ function CartPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Popup for empty cart message */}
+            {showEmptyCartAlert && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <p>You cannot proceed to checkout with an empty cart. Please shop some items first.</p>
+                        <button className="close-btn" onClick={handleCloseAlert}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
